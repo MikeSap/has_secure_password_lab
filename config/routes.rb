@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-  get '/', to: 'welcome#home'
-
   resources :users, only: [:new, :create]
 
   get '/login' => 'sessions#new'

@@ -8,18 +8,16 @@
 
 
 
-<%= form_for @user do |f| %>
- 
-<%=f.fields_for :user do |u|%>
-<%=u.label :name%>
-<%=u.text_field :name %><br>
+<%=form_for @user, url: '/users', method: :post do |f|%>
 
-<%=u.label :password%>
-<%=u.password_field :password%><br>
+<%=f.label :name%>
+<%=f.text_field :name %><br>
 
-<%=u.label :password_confirmation%>
-<%=u.password_field :password_confirmation%><br>
-<%end%>
+<%=f.label :password%>
+<%=f.password_field :password%><br>
+
+<%=f.label :password_confirmation%>
+<%=f.password_field :password_confirmation%><br>
 
 <%=f.submit "create"%>
 

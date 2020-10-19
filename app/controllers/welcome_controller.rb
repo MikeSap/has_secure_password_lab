@@ -1,5 +1,6 @@
-class WelcomeController < ApplicationController
-    before_action :require_login
-    def home
+class WelcomeController < ApplicationController  
+  before_action :require_login
+
+  def home
     end
   end
