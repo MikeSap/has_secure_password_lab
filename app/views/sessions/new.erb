@@ -1,0 +1,27 @@
+<% if @user.errors.any? %>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
+
+
+<%= form_for @user, url: login_path, method: :post do |f| %>
+ 
+<%=f.fields_for :user do |u|%>
+<%=u.label :name%>
+<%=u.text_field :name %><br>
+
+<%=u.label :password%>
+<%=u.password_field :password%><br>
+
+<%=u.label :password_confirmation%>
+<%=u.password_field :password_confirmation%><br>
+<%end%>
+
+<%=f.submit "Submit"%>
+Or <%= link_to('users/new') { 'sign up' } %>
+
+<%end%>
